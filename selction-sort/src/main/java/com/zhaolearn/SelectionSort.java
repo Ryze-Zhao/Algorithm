@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Hello world!
  *
  */
-public class App {
+public class SelectionSort {
     public static void select_sort(int[] array){
         for(int i=0;i< array.length-1;i++){
             int minIndex = i;
