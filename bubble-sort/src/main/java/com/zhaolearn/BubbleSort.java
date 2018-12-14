@@ -20,13 +20,14 @@ public class BubbleSort{
                     arr[j-1] = temp;
                 }
                 forNum++;
-                System.out.println("每次排序---：" + Arrays.toString(arr));
+                System.out.println("---每次排序：" + Arrays.toString(arr));
             }
-            System.out.println("---每趟排序：" + Arrays.toString(arr));
+            System.out.println("---第 " + (i + 1) + " 趟排序：" + Arrays.toString(arr));
         }
         System.out.println("循环次数:"+forNum+" 排序后数组："+Arrays.toString(arr));
     }
     public static void bubbleSort2(int[] arr){
+        System.out.println("预计次数≤:"+arr.length*(arr.length-1)/2+" 原数组："+Arrays.toString(arr));
         int forNum=0;//记录循环次数，不属于排序算法
         int temp;//临时变量
         boolean flag;//是否交换的标志
@@ -40,9 +41,9 @@ public class BubbleSort{
                     flag=true;
                 }
                 forNum++;
-                System.out.println("每次排序---：" + Arrays.toString(arr));
+                System.out.println("---每次排序：" + Arrays.toString(arr));
             }
-            System.out.println("---每趟排序：" + Arrays.toString(arr));
+            System.out.println("---第 " + (i + 1) + " 趟排序：" + Arrays.toString(arr));
             if(!flag) break;
         }
        System.out.println("循环次数:"+forNum+" 排序后数组："+Arrays.toString(arr));
@@ -50,9 +51,9 @@ public class BubbleSort{
 
     public static void main(String[] args) {
 
-        int[] arr={2,3,10,124,112,1324,1421,3,75,11};
- bubbleSort1(arr);
+        int[] arr = {2, 3, 10, 124, 112, 3, 75, 11};
+// bubbleSort1(arr);
         System.out.println("------------------------");
-        //              bubbleSort2(arr);
+        bubbleSort2(arr);
     }
 }
