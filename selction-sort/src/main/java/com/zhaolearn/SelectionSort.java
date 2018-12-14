@@ -7,21 +7,24 @@ import java.util.Arrays;
  *
  */
 public class SelectionSort {
-    public static void select_sort(int[] array){
-        for(int i=0;i< array.length-1;i++){
+    public static void select_sort(int[] arr){
+        System.out.println("预计次数:"+arr.length*(arr.length-1)/2+" 原数组："+Arrays.toString(arr));
+        int forNum=0;//记录循环次数，不属于排序算法
+        for(int i=0;i< arr.length-1;i++){
             int minIndex = i;
-            for(int j=i+1;j<array.length;j++){
-                if(array[j]<array[minIndex]){
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[j]<arr[minIndex]){
                     minIndex = j;
                 }
+                forNum++;
             }
             if(minIndex != i){
-                int temp = array[i];
-                array[i] = array[minIndex];
-                array[minIndex] = temp;
+                int temp = arr[i];
+                arr[i] = arr[minIndex];
+                arr[minIndex] = temp;
             }
         }
-        System.out.println(Arrays.toString(array));
+        System.out.println("循环次数:"+forNum+" 排序后数组："+Arrays.toString(arr));
     }
     public static void main(String[] args) {
 
