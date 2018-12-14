@@ -30,7 +30,6 @@ public class SelectionSort {
     }
 
     public static void main(String[] args) {
-
         int[] arr = {2, 3, 10, 124, 112, 3, 75, 11};
         System.out.println("------------------------");
         select_sort(arr);
