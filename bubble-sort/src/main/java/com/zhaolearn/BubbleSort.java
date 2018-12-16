@@ -49,11 +49,54 @@ public class BubbleSort{
        System.out.println("循环次数:"+forNum+" 排序后数组："+Arrays.toString(arr));
     }
 
+    public static void bubbleSort3(int[] arr){
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public static void main(String[] args) {
 
         int[] arr = {2, 3, 10, 124, 112, 3, 75, 11};
 // bubbleSort1(arr);
         System.out.println("------------------------");
-        bubbleSort2(arr);
+        //bubbleSort2(arr);
+       bubbleSort3(arr);
     }
 }
