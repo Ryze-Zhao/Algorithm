@@ -24,7 +24,7 @@ public class HeapSort {
             MinHeapFixdown(a,i,n);
         }
     }
-    //从i节点开始调整,n为节点总数 从0开始计算 i节点的子节点为 2*i+1, 2*i+2
+    //这是从i节点开始调整,n为节点总数 从0开始计算 i节点的子节点为 2*i+1, 2*i+2
     public static void MinHeapFixdown(int a[],int i,int n){
 
         int j = 2*i+1; //子节点
