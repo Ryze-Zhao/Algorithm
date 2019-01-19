@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>selction-sort</artifactId>
+    <artifactId>selection-sort</artifactId>
 
-    <name>selction-sort</name>
+    <name>selection-sort</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 

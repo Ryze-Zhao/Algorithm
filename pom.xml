@@ -10,7 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>bubble-sort</module>
-        <module>selction-sort</module>
+        <module>selection-sort</module>
         <module>insertion-sort</module>
         <module>shell-sort</module>
         <module>quick-sort</module>
