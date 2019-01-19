@@ -13,17 +13,18 @@ public class InsertSort {
         int temp;
         for(int i=0;i<arr.length-1;i++){
             for(int j=i+1;j>0;j--){
+                forNum++;
                 if(arr[j] < arr[j-1]){
                     temp = arr[j-1];
                     arr[j-1] = arr[j];
                     arr[j] = temp;
+                    System.out.println("第 "+(forNum)+" 次排序：" + Arrays.toString(arr));
                 }else{         //不需要交换
+                    System.out.println("第 "+(forNum)+" 次排序（无交换）：" + Arrays.toString(arr));
                     break;
                 }
-                forNum++;
-                System.out.println("---每次排序：" + Arrays.toString(arr));
             }
-            System.out.println("---第 " + (i + 1) + " 趟排序：" + Arrays.toString(arr));
+            System.out.println("第 " + (i + 1) + " 趟---排序完毕：" + Arrays.toString(arr));
         }
         System.out.println("循环次数:"+forNum+" 排序后数组："+Arrays.toString(arr));
     }
