@@ -32,4 +32,4 @@ aigorithm-test测试模块
 1. RyzeZhao
 
 #### 设计模式博客汇总
-http://www.hehaozhao.xin/front/articlePage/hwbpvqqi9h
+http://www.hehaozhao.top/front/articlePage/hwbpvqqi9h
