@@ -18,7 +18,7 @@ aigorithm-test测试模块
 
 
 1. bubble-sort      冒泡排序
-2. selection-sort    选择排序
+2. selection-sort   选择排序
 3. insertion-sort   插入排序
 4. shell-sort       希尔排序
 5. quick-sort       快速排序
