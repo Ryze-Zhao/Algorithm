@@ -1,12 +1,21 @@
 package com.zhaolearn;
 
+import java.util.Arrays;
+
 /**
  * Hello world!
  *
  */
 public class MergeSort {
-    public static void merge_sort(int a[],int first,int last,int temp[]){
+    public static void main(String[] args) {
+        int[] arr = {21, 35, 10, 124, 112, 3, 75, 11};
+        int[] temp={};
+        System.out.println("------------------------");
+        merge_sort(arr,arr[0],arr[7],temp);
+        System.out.println(Arrays.toString(arr));
+    }
 
+    public static void merge_sort(int a[],int first,int last,int temp[]){
         if(first < last){
             int middle = (first + last)/2;
             merge_sort(a,first,middle,temp);//左半部分排好序
@@ -49,8 +58,5 @@ public class MergeSort {
         }
     }
 
-    public static void main(String[] args) {
-        int[] arr = {21, 35, 10, 124, 112, 3, 75, 11};
-        System.out.println("------------------------");
-    }
+
 }
