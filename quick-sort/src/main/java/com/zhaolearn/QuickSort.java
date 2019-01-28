@@ -20,6 +20,7 @@ public class QuickSort {
         System.out.println("------------------------");
         //第一次传入时取下标最小和下标最大
         quickSort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
     }
 
     public static void quickSort(int[] arr, int left, int right) {
@@ -43,13 +44,16 @@ public class QuickSort {
                 int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
+               // System.out.println(Arrays.toString(arr)+left+right+i+j);
             }
+           // System.out.println(i+"---"+j);
         }
+
     //把基准值换到   while (i < j) {}不成立对应的i下标位置
         arr[left] = arr[i];
         arr[i] = pivot;//把基准值放到合适的位置
         quickSort(arr, left, i - 1);//对左边的子数组进行快速排序
         quickSort(arr, i + 1, right);//对右边的子数组进行快速排序
-        System.out.println(Arrays.toString(arr));
+      //  System.out.println(Arrays.toString(arr)+left+"---"+right+"---"+i+"---"+j);
     }
 }
