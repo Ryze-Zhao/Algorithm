@@ -5,28 +5,31 @@ package com.zhaolearn;
  *
  */
 public class QuickSort{
-    public static void quickSort(int a[],int l,int r){
-        if(l>=r)
+    public static void quickSort(int[]a,int left,int right)
+    {
+        if(left>right)
             return;
-        int i = l; int j = r; int key = a[l];//选择第一个数为key
-        while(i<j){
-            while(i<j && a[j]>=key)//从右向左找第一个小于key的值
+        int pivot=a[left];//定义基准值为数组第一个数
+        int i=left;
+        int j=right;
+
+        while(i<j)
+        {
+            while(pivot<=a[j]&&i<j)//从右往左找比基准值小的数
                 j--;
-            if(i<j){
-                a[i] = a[j];
+            while(pivot>=a[i]&&i<j)//从左往右找比基准值大的数
                 i++;
-            }
-            while(i<j && a[i]<key)//从左向右找第一个大于key的值
-                i++;
-            if(i<j){
-                a[j] = a[i];
-                j--;
+            if(i<j)                     //如果i<j，交换它们
+            {
+                int temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
             }
         }
-        //i == j
-        a[i] = key;
-        quickSort(a, l, i-1);//递归调用
-        quickSort(a, i+1, r);//递归调用
+        a[left]=a[i];
+        a[i]=pivot;//把基准值放到合适的位置
+        quickSort(a,left,i-1);//对左边的子数组进行快速排序
+        quickSort(a,i+1,right);//对右边的子数组进行快速排序
     }
     public static void main(String[] args) {
         int[] arr = {21, 35, 10, 124, 112, 3, 75, 11};
