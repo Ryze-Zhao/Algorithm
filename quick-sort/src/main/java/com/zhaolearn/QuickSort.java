@@ -1,36 +1,59 @@
 package com.zhaolearn;
 
+import java.util.Arrays;
+
 /**
- * Hello world!
- *
+ * 1、定基准值
+ * 通常定最左手边的值（pivot=21）
+ * 2、比较大小、交换、继续找
+ * 从右往左找到第一个比pivot小的值(11，下标为j=7)，从左往右找到第一个比pivot大的值（35，下标为i=1），如果i<j,就交换位置，这样比基准小的值在左边，比基准大的值在右边
+ * 变为[21, 11, 10, 124, 112, 3, 75, 35]
+ * 继续找，发现（3，下标为5）与（124，下标为3）也符合要求再交换一次
+ * 变为[21, 11, 10, 3, 112, 124, 75, 35]
+ * 3、交换基准值到合适的位置
+ * 以上处理完毕， while (i < j) {}会不成立，然后将arr[i]调到arr[left],再把基准值（pivot=21，原来的arr[left]）调到arr[i]，这个结束后，基准值的左边都比基准值小，右边都比基准值大
+ * 4、递归以上操作，直到排序完毕
  */
-public class QuickSort{
-    public static void quickSort(int a[],int l,int r){
-        if(l>=r)
+public class QuickSort {
+    public static void main(String[] args) {
+        int[] arr = {21, 35, 10, 124, 112, 3, 75, 11};
+        System.out.println("------------------------");
+        //第一次传入时取下标最小和下标最大
+        quickSort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void quickSort(int[] arr, int left, int right) {
+        //左边比右边下标大，证明已经过半，不需要继续进行递归
+        if (left > right) {
             return;
-
-        int i = l; int j = r; int key = a[l];//选择第一个数为key
-
-        while(i<j){
-
-            while(i<j && a[j]>=key)//从右向左找第一个小于key的值
-                j--;
-            if(i<j){
-                a[i] = a[j];
-                i++;
-            }
-
-            while(i<j && a[i]<key)//从左向右找第一个大于key的值
-                i++;
-
-            if(i<j){
-                a[j] = a[i];
-                j--;
-            }
         }
-        //i == j
-        a[i] = key;
-        quickSort(a, l, i-1);//递归调用
-        quickSort(a, i+1, r);//递归调用
+        int pivot = arr[left]; //定义基准值为数组传入的arr[left]
+        int i = left;  //令i=left，继续每次递归最左边的值
+        int j = right;//令j=right，继续每次递归最右边的值
+
+        while (i < j) {
+            while (pivot <= arr[j] && i < j) {
+                j--;//从右往左找比基准值小的数，没有就下标减少1
+            }
+            while (pivot >= arr[i] && i < j) {
+                i++;//从左往右找比基准值大的数，没有就下标增加1
+            }
+     //如果i<j，证明arr[i]是比基准大，arr[j]比基准小，i<j就可以交换位置，让小的在左边，大的在右边
+            if (i < j){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+               // System.out.println(Arrays.toString(arr)+left+right+i+j);
+            }
+           // System.out.println(i+"---"+j);
+        }
+
+    //把基准值换到   while (i < j) {}不成立对应的i下标位置
+        arr[left] = arr[i];
+        arr[i] = pivot;//把基准值放到合适的位置
+        quickSort(arr, left, i - 1);//对左边的子数组进行快速排序
+        quickSort(arr, i + 1, right);//对右边的子数组进行快速排序
+      //  System.out.println(Arrays.toString(arr)+left+"---"+right+"---"+i+"---"+j);
     }
 }
