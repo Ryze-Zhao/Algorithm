@@ -26,10 +26,10 @@ public class MergeSort {
 
     public static void mergeArray(int a[], int first, int middle, int end, int temp[]) {
         System.out.println("进入时：Arr："+Arrays.toString(a)+"  Temp:"+Arrays.toString(temp));
-        int i = first;
+        int i = first;//左序列指针
         int m = middle;
-        int j = middle + 1;
-        int n = end;
+        int j = middle + 1;//右序列指针
+        int n = end;//临时数组指针
         int k = 0;
         while (i <= m && j <= n) {
             if (a[i] <= a[j]) {
