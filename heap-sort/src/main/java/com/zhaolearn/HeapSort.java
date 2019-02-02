@@ -1,5 +1,7 @@
 package com.zhaolearn;
 
+import java.util.Arrays;
+
 /**
  * Hello world!!!!
  *
@@ -53,5 +55,7 @@ public class HeapSort {
     public static void main(String[] args) {
         int[] arr = {21, 35, 10, 124, 112, 3, 75, 11};
         System.out.println("------------------------");
+        MinHeap_Sort(arr,arr.length);
+        System.out.println("排序完成："+Arrays.toString(arr));
     }
 }
