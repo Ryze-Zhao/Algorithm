@@ -7,8 +7,6 @@ import java.util.Arrays;
  *
  */
 public class HeapSort {
-
-
     public static void MinHeap_Sort(int a[],int n){
         int temp = 0;
         MakeMinHeap(a,n);
@@ -37,7 +35,6 @@ public class HeapSort {
             if(j+1<n && a[j+1]<a[j]){
                 j++;
             }
-
             if(a[i] <= a[j]) {
                 break;
             }
@@ -50,7 +47,6 @@ public class HeapSort {
             j = 2*i+1;
         }
     }
-
 
     public static void main(String[] args) {
         int[] arr = {21, 35, 10, 124, 112, 3, 75, 11};
