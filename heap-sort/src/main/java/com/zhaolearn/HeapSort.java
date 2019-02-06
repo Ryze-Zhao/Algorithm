@@ -10,7 +10,6 @@ public class HeapSort {
     public static void MinHeap_Sort(int a[],int n){
         int temp = 0;
         MakeMinHeap(a,n);
-
         for(int i=n-1;i>0;i--){
             temp = a[0];
             a[0] = a[i];
