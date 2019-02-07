@@ -2,10 +2,6 @@ package com.zhaolearn;
 
 import java.util.Arrays;
 
-/**
- * Hello world!!!!
- *
- */
 public class HeapSort {
     public static void MinHeap_Sort(int a[],int n){
         int temp = 0;
