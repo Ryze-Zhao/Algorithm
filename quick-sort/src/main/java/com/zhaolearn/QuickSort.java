@@ -17,7 +17,7 @@ import java.util.Arrays;
 public class QuickSort {
     public static void main(String[] args) {
         int[] arr = {21, 35, 10, 124, 112, 3, 75, 11};
-        System.out.println("-------------------------");
+        System.out.println("----------------------");
         //第一次传入时取下标最小和下标最大
         quickSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
