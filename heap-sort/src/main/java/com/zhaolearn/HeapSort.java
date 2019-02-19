@@ -2,10 +2,15 @@ package com.zhaolearn;
 
 import java.util.Arrays;
 
+/**
+ * 这个是从大到小排序
+ * 1、从arr[aarr.length-1]也就是最后一个数字开始，将所有子节点与他们的父节点进行比较，如果子节点比父节点小，就交换位置，这样在父节点的数字肯定比他的子节点数字大；
+ * 2、
+ */
 public class HeapSort {
     public static void MaxHeap_Sort(int arr[]){
         int temp = 0;
-        //这一步将所有父节点进行交换
+        //这一步是将所有父节点改为最小的数
         for(int i=(arr.length-1)/2 ; i>=0 ; i--){
             System.out.println("父节点前："+Arrays.toString(arr)+" i的值："+i);
             MaxHeapFixdown(arr,i,arr.length);
@@ -13,10 +18,10 @@ public class HeapSort {
             System.out.println("--------------------------");
         }
         for(int i=arr.length-1;i>0;i--){
+            System.out.println("子节点前："+Arrays.toString(arr)+" i的值："+i);
             temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;
-            System.out.println("子节点前："+Arrays.toString(arr)+" i的值："+i);
             MaxHeapFixdown(arr,0,i);
             System.out.println("子节点后："+Arrays.toString(arr)+" i的值："+i);
             System.out.println("--------------------------");
