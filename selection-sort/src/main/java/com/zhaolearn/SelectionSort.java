@@ -3,9 +3,6 @@ package com.zhaolearn;
 import java.util.Arrays;
 import java.util.logging.Logger;
 
-/**
- * Hello world!
- */
 public class SelectionSort {
     public static void select_sort(int[] arr) {
         //用于记录次数用的数字
