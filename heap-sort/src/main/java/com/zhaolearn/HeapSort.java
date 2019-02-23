@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * 这个是从大到小排序
  * 1、从arr[aarr.length-1]也就是最后一个数字开始，将所有子节点与他们的父节点进行比较，如果子节点比父节点小，就交换位置，这样在父节点的数字肯定比他的子节点数字大；
- * 2、
+ * 2、事后补充
  */
 public class HeapSort {
     public static void MaxHeap_Sort(int arr[]){
