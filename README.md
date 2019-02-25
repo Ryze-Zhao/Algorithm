@@ -2,7 +2,9 @@
 
 #### 项目介绍
 主要是学习算法与排序的构建和使用
-学习时间：2018-12-27 22:03:59
+可以参考设计模式博客汇总
+http://www.hehaozhao.top/front/articlePage/hwbpvqqi9h
+
 #### 软件架构
 软件架构说明
 
@@ -31,5 +33,4 @@ aigorithm-test测试模块
 #### 参与贡献
 1. RyzeZhao
 
-#### 设计模式博客汇总
-http://www.hehaozhao.top/front/articlePage/hwbpvqqi9h
+#### 
