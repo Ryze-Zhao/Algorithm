@@ -35,7 +35,6 @@ public class HeapSort {
 
     /**
      * 调整大顶堆（仅是调整过程，建立在大顶堆已构建的基础上）
-     *
      * @param arr
      * @param i
      * @param length
@@ -58,7 +57,6 @@ public class HeapSort {
 
     /**
      * 交换元素
-     *
      * @param arr
      * @param a
      * @param b
