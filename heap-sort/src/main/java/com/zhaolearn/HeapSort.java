@@ -3,54 +3,66 @@ package com.zhaolearn;
 import java.util.Arrays;
 
 /**
- * 这个是从大到小排序
- * 1、从arr[aarr.length-1]也就是最后一个数字开始，将所有子节点与他们的父节点进行比较，如果子节点比父节点小，就交换位置，这样在父节点的数字肯定比他的子节点数字大；
- * 2、事后补充
+ * Created by chengxiao on 2016/12/17.
+ * 堆排序demo
  */
 public class HeapSort {
-    public static void MaxHeap_Sort(int arr[]){
-        int temp = 0;
-        //这一步是将所有父节点改为最小的数
-        for(int i=(arr.length-1)/2 ; i>=0 ; i--){
-            System.out.println("父节点前："+Arrays.toString(arr)+" i的值："+i);
-            MaxHeapFixdown(arr,i,arr.length);
-            System.out.println("父节点后："+Arrays.toString(arr)+" i的值："+i);
-            System.out.println("--------------------------");
-        }
-        for(int i=arr.length-1;i>0;i--){
-            System.out.println("子节点前："+Arrays.toString(arr)+" i的值："+i);
-            temp = arr[0];
-            arr[0] = arr[i];
-            arr[i] = temp;
-            MaxHeapFixdown(arr,0,i);
-            System.out.println("子节点后："+Arrays.toString(arr)+" i的值："+i);
-            System.out.println("--------------------------");
-        }
+    public static void main(String []args){
+        int[] arr = {21, 35, 10, 124, 112, 3, 75, 11};
+        sort(arr);
+        System.out.println("结束："+Arrays.toString(arr));
     }
-    //这是从i节点开始调整,n为节点总数 从0开始计算 i节点的子节点为 2*i+1, 2*i+2
-    public static void MaxHeapFixdown(int a[],int i,int n){
-        int temp = 0;
-        for(int j=2*i+1;j<n;i=j,j=2*i+1){
+    public static void sort(int []arr){
+        //1.构建大顶堆
+        for(int i=arr.length/2-1;i>=0;i--){
+            //从第一个非叶子结点从下至上，从右至左调整结构
+            System.out.println("adjustHeap--1---开："+Arrays.toString(arr));
+            adjustHeap(arr,i,arr.length);
+            System.out.println("adjustHeap--1---关："+Arrays.toString(arr));
+        }
+        //2.调整堆结构+交换堆顶元素与末尾元素
+        for(int j=arr.length-1;j>0;j--){
+            System.out.println("swap---开："+Arrays.toString(arr));
+            swap(arr,0,j);//将堆顶元素与末尾元素进行交换
+            System.out.println("swap---关："+Arrays.toString(arr));
+            System.out.println("adjustHeap--2---开："+Arrays.toString(arr));
+            adjustHeap(arr,0,j);//重新对堆进行调整
+            System.out.println("adjustHeap--2---关："+Arrays.toString(arr));
+        }
 
-            //在左右子节点中寻找最小的
-            if(j+1<n && a[j+1]<a[j]){
-                j++;
+    }
+
+    /**
+     * 调整大顶堆（仅是调整过程，建立在大顶堆已构建的基础上）
+     * @param arr
+     * @param i
+     * @param length
+     */
+    public static void adjustHeap(int []arr,int i,int length){
+        int temp = arr[i];//先取出当前元素i
+        for(int k=i*2+1;k<length;k=k*2+1){//从i结点的左子结点开始，也就是2i+1处开始
+            if(k+1<length && arr[k]<arr[k+1]){//如果左子结点小于右子结点，k指向右子结点
+                k++;
             }
-            if(a[i] <= a[j]) {
+            if(arr[k] >temp){//如果子节点大于父节点，将子节点值赋给父节点（不用进行交换）
+                arr[i] = arr[k];
+                i = k;
+            }else{
                 break;
             }
-            //较大节点下移
-            temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
-
         }
+        arr[i] = temp;//将temp值放到最终的位置
     }
 
-    public static void main(String[] args) {
-        int[] arr = {21, 35, 10, 124, 112, 3, 75, 11};
-        System.out.println("--------------------------");
-        MaxHeap_Sort(arr);
-        System.out.println("排序完成："+Arrays.toString(arr));
+    /**
+     * 交换元素
+     * @param arr
+     * @param a
+     * @param b
+     */
+    public static void swap(int []arr,int a ,int b){
+        int temp=arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
     }
 }
