@@ -27,7 +27,7 @@ aigorithm-test测试模块
 6. merge-sort       归并排序
 7. heap-sort        堆排序
 8. RadixSort        基数排序
-
+9. bloom-filter     布隆过滤器
 
 
 #### 参与贡献
