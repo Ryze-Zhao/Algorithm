@@ -19,16 +19,18 @@ Aigorithm父模块
 aigorithm-test测试模块
 
 
-1. bubble-sort      冒泡排序
-2. selection-sort   选择排序
-3. insertion-sort   插入排序
-4. shell-sort       希尔排序
-5. quick-sort       快速排序
-6. merge-sort       归并排序
-7. heap-sort        堆排序
-8. RadixSort        基数排序
-9. bloom-filter     布隆过滤器
-
+1. bubble-sort                                  冒泡排序
+2. selection-sort                               选择排序
+3. insertion-sort                               插入排序
+4. shell-sort                                   希尔排序
+5. quick-sort                                   快速排序
+6. merge-sort                                   归并排序
+7. heap-sort                                    堆排序
+8. RadixSort                                    基数排序
+9. bloom-filter                                 布隆过滤器
+10.distributed                                  分布式相关
+10.1    id                                          分布式ID
+10.1.1      SnowFlakeShortUrl                           Twitter的SnowFlake算法（雪花算法）
 
 #### 参与贡献
 1. RyzeZhao
