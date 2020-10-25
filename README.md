@@ -35,6 +35,7 @@ http://www.hehaozhao.top/front/articlePage/hwbpvqqi9h
 ### 	LeetCode（力扣网算法记录）
 
 1. 算法1：两数之和
+2. 算法2：两数相加
 
 
 
