@@ -33,10 +33,8 @@ http://www.hehaozhao.top/front/articlePage/hwbpvqqi9h
 
 
 ### 	LeetCode（力扣网算法记录）
+[力扣ReadMe](leetcode/LeetCode.md)
 
-1. 算法1：两数之和
-2. 算法2：两数相加
-3. 算法3：无重复字符的最长子串
 
 
 
